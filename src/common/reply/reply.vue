@@ -29,6 +29,7 @@
         </div>
       </li>
     </ul>
+    <div class="daq-no-data" v-if="!replies.length"></div>
   </div>
 </template>
 
