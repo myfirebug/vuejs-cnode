@@ -56,8 +56,9 @@
        * 请求接口
        */
       Ajax.getDetail(this.$route.query.id)
-        .then((data) => {
-          this.details = data.data
+        .then((res) => {
+          this.details = res.data
+          document.title = res.data.title
         })
     },
     filters: {

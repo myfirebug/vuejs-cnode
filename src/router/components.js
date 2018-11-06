@@ -8,6 +8,8 @@ import Home from '../page/home.vue'
 import Detail from '../page/detail.vue'
 import Login from '../page/login.vue'
 import Comments from '../page/comments.vue'
+import My from '../page/my.vue'
+import Topic from '../page/topic.vue'
 
 const componentsRoutes = [
   {
@@ -47,6 +49,22 @@ const componentsRoutes = [
     component: Comments,
     meta: {
       title: '评论'
+    }
+  },
+  {
+    path: '/my',
+    name: 'my',
+    component: My,
+    meta: {
+      title: '我的'
+    }
+  },
+  {
+    path: '/topic',
+    name: 'topic',
+    component: Topic,
+    meta: {
+      title: '最近创建的话题'
     }
   }
 ]

@@ -32,7 +32,7 @@ new Vue({
   template: '<App/>',
   watch: {
     '$route' (to, from) {
-      this.transitionName = from.name === 'home' ? 'slide-left' : 'slide-right'
+      this.transitionName = from.name === 'home' ? 'slide-right' : 'slide-left'
     }
   }
 })

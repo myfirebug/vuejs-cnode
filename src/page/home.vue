@@ -12,12 +12,18 @@
       <daq-scroll-load requestName="getTopics" :list="list" :params="params" @list="getList">
       <ul class="list" slot="list">
         <li class="item" v-for="item in list" :key="item.id">
-          <router-link :to="{ path: '/detail', query:{ id: item.id }}">
             <div class="item-hd">
-              <div class="user-avatar"><img :src="item.author.avatar_url"></div>
-              <div class="user-info"><p class="user-name">{{item.author.loginname}}</p>
-                <p class="create-at">{{item.create_at | fmtDate}}</p></div>
+              <router-link tag="div" :to="{ path: '/my', query:{ loginname: item.author.loginname }}">
+                <div class="user-avatar"><img :src="item.author.avatar_url"></div>
+              </router-link>
+              <div class="user-info">
+                <router-link tag="p" :to="{ path: '/my', query:{ loginname: item.author.loginname }}">
+                  <p class="user-name">{{item.author.loginname}}</p>
+                </router-link>
+                <p class="create-at">{{item.create_at | fmtDate}}</p>
+              </div>
             </div>
+          <router-link :to="{ path: '/detail', query:{ id: item.id }}">
             <div class="item-bd"><h2><span class="put-top">{{[item.tab, item.good, item.top] | getLabel}}</span>{{item.title}}</h2></div>
             <div class="item-ft">
               <span><i class="ued-mobile">&#xe666;</i>{{item.reply_count}}</span>
@@ -36,7 +42,7 @@
       <daq-tabbar-item url="list" text="消息" defaultIcon="&#xe68a;" activeIcon="&#xe68a;">
         <daq-badge size="large" style="position:absolute;left:0;top:-.1rem;margin-left:.3rem">12</daq-badge>
       </daq-tabbar-item>
-      <daq-tabbar-item url="button" text="我的" defaultIcon="&#xe6a1;" activeIcon="&#xe6a1;"></daq-tabbar-item>
+      <daq-tabbar-item url="my" text="我的" defaultIcon="&#xe6a1;" activeIcon="&#xe6a1;"></daq-tabbar-item>
     </daq-tabbar>
   </div>
 </template>

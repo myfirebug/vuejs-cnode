@@ -105,5 +105,19 @@ export default {
         content: params.content
       }
     })
+  },
+  /**
+   * 新建评论
+   * @param params
+   */
+  my (params) {
+    return ajax({
+      url: '/user/' + params.loginname,
+      type: 'get',
+      loading: false,
+      params: {
+        accesstoken: params.accesstoken
+      }
+    })
   }
 }

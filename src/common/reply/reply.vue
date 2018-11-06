@@ -18,7 +18,7 @@
         <div class="reply-content" v-html="item.content"></div>
 
         <div class="reply-operation">
-          <span @click="like(item.id, index)"><i
+          <span @click="like(item.id, index)" v-if="item.author.loginname !== userInfo.loginname && userInfo.accesstoken"><i
             class="ued-mobile" title="点赞">&#xe643;</i>{{item.ups.indexOf(userInfo.id) !== -1 ? '取消点赞' : '点赞'}}({{item.ups && item.ups.length ? item.ups.length : 0}})</span>
           <span @click="deleteReply(item.id)"
                 v-if="item.author.loginname === userInfo.loginname && userInfo.accesstoken"><i class="ued-mobile"
@@ -29,7 +29,7 @@
         </div>
       </li>
     </ul>
-    <div class="daq-no-data" v-if="!replies.length"></div>
+    <div class="daq-no-data" v-if="replies && !replies.length"></div>
   </div>
 </template>
 

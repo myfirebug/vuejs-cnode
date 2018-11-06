@@ -7,15 +7,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import count from './modules/count.js'
 import userInfo from './modules/userInfo.js'
+import my from './modules/my.js'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    count,
-    userInfo
+    userInfo,
+    my
   }
 })
 

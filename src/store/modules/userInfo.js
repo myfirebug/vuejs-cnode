@@ -8,7 +8,12 @@
 // state
 import los from '../../util/localStorage.js'
 const state = {
-  data: los.get('userInfo') ? los.get('userInfo') : {}
+  data: los.get('userInfo') ? los.get('userInfo') : {
+    accesstoken: '',
+    avatar_url: '',
+    id: '',
+    loginname: ''
+  }
 }
 
 const getters = {
@@ -25,6 +30,7 @@ const mutations = {
    * @param payload
    */
   getUserInfo (state, payload) {
+    console.log(state)
     state.data = payload
   }
 }
