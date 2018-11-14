@@ -10,6 +10,7 @@ import Login from '../page/login.vue'
 import Comments from '../page/comments.vue'
 import My from '../page/my.vue'
 import Topic from '../page/topic.vue'
+import Publish from '../page/publish.vue'
 
 const componentsRoutes = [
   {
@@ -63,6 +64,14 @@ const componentsRoutes = [
     path: '/topic',
     name: 'topic',
     component: Topic,
+    meta: {
+      title: '最近创建的话题'
+    }
+  },
+  {
+    path: '/publish',
+    name: 'publish',
+    component: Publish,
     meta: {
       title: '最近创建的话题'
     }

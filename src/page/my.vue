@@ -23,8 +23,8 @@
         </ul>
       <daq-tabbar :fixed="false" v-show="userInfo.loginname && userInfo.loginname === myInfo.data.loginname">
         <daq-tabbar-item url="home" text="首页" defaultIcon="&#xe729;" activeIcon="&#xe729;"></daq-tabbar-item>
-        <daq-tabbar-item url="bottomMenuBar" text="发表" defaultIcon="&#xe6b9;" activeIcon="&#xe6b9;"></daq-tabbar-item>
-        <daq-tabbar-item url="list" text="消息" defaultIcon="&#xe68a;" activeIcon="&#xe68a;">
+        <daq-tabbar-item url="publish" text="发表" defaultIcon="&#xe6b9;" activeIcon="&#xe6b9;"></daq-tabbar-item>
+        <daq-tabbar-item url="message" text="消息" defaultIcon="&#xe68a;" activeIcon="&#xe68a;">
           <daq-badge size="large" style="position:absolute;left:0;top:-.1rem;margin-left:.3rem">12</daq-badge>
         </daq-tabbar-item>
         <daq-tabbar-item url="my" text="我的" defaultIcon="&#xe6a1;" activeIcon="&#xe6a1;"></daq-tabbar-item>
